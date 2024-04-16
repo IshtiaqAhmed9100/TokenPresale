@@ -69,10 +69,10 @@ contract TokenPresale is Ownable {
         usdtToken.transferFrom(
             msg.sender,
             fundingWallet,
-            tokenAmount * (10 ** 18)
+            tokenAmount * (10 ** 6)
         ); // transerriing usdt valuee tto funding wallet
 
-        uint256 TokensBoughtWithUsdt = tokenAmount / price; //geettting the token from th given usdt value
+        uint256 TokensBoughtWithUsdt = tokenAmount * (10 ** 18)/ price; //geettting the token from th given usdt value
 
         userTokens[msg.sender] = userTokens[msg.sender] + TokensBoughtWithUsdt; // adding token amount
     }
